@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>Reading List</title>
@@ -17,7 +16,11 @@
     <div th:unless="${#lists.isEmpty(books)}">
       <dl th:each="book : ${books}">
         <dt class="bookHeadline">
-          <span th:text="${book.title}">Title</span> by
+          <a th:href="'http://www.baidu.com/' 
+                      + ${book.isbn} 
+                      + '/tag=' + ${amazonID}" 
+             th:text="${book.title}">Title</a>
+          <!-- <span th:text="${book.title}">Title</span> --> by
           <span th:text="${book.author}">Author</span>
           (ISBN: <span th:text="${book.isbn}">ISBN</span>)
         </dt>
@@ -48,5 +51,6 @@
         <textarea name="description" cols="80" rows="5"></textarea><br/>
       <input type="submit" value="submit"/>
     </form>
+    <img th:src="@{/MissingPage.png}"></img>
   </body>
 </html>

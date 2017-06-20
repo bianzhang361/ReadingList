@@ -1,0 +1,10 @@
+spring:
+  thymeleaf:
+    cache: false
+  profiles:
+    active:
+      - development
+
+server:
+  port: 8443
+
